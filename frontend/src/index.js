@@ -10,6 +10,8 @@ import Body from "./components/Body";
 import ViewDetail from "./components/ViewDetail";
 import Banner from "./components/Banner";
 import LoginEmployer from "./components/LoginEmployer";
+import Post from "./components/Post";
+import Apply from "./components/Apply";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +44,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/recruit/login",
         element: <LoginEmployer />,
+      },
+      {
+        path: "/recruit/post",
+        element: <Post />,
+      },
+      {
+        path: "/apply",
+        element: <Apply />,
       },
     ],
   },

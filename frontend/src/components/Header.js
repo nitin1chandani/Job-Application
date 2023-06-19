@@ -26,30 +26,40 @@ const Header = () => {
               Services
             </li>
           </ul>
-          <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-            <Link to="/login">Login</Link>
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            <Link to="/register">Register</Link>
-          </button>
+          <Link to="/login">
+            <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+              Login
+            </button>
+          </Link>
+          <Link to="/register">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+              Register
+            </button>
+          </Link>
           <div className="relative">
             <button
-              className="text-lg text-white px-4 py-2 rounded"
+              className="text-lg text-white px-4 py-2 rounded hover:text-gray-300 cursor-pointer"
               onClick={handleDropdownToggle}
             >
               For Employers
             </button>
             {showDropdown && (
               <ul className="absolute mt-2 bg-white text-gray-800 py-2 px-4 rounded shadow">
-                <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
-                  Post a Job
-                </li>
-                <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
-                  <Link to="/recruit/register">Register as Employer</Link>
-                </li>
-                <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
-                  <Link to="/recruit/login">Employer Login</Link>
-                </li>
+                <Link to="/recruit/post">
+                  <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
+                    Post a Job
+                  </li>
+                </Link>
+                <Link to="/recruit/register">
+                  <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
+                    Register as Employer
+                  </li>
+                </Link>
+                <Link to="/recruit/login">
+                  <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
+                    Employer Login
+                  </li>
+                </Link>
               </ul>
             )}
           </div>
