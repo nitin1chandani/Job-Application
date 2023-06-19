@@ -45,10 +45,10 @@ const Header = () => {
                   Post a Job
                 </li>
                 <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
-                  Buy Online
+                  <Link to="/recruit/register">Register as Employer</Link>
                 </li>
                 <li className="hover:bg-gray-200 py-1 cursor-pointer transition-colors duration-200">
-                  Employer Login
+                  <Link to="/recruit/login">Employer Login</Link>
                 </li>
               </ul>
             )}

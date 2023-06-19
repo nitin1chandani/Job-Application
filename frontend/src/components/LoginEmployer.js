@@ -1,10 +1,12 @@
 import React from "react";
 
-const Login = () => {
+const LoginEmployer = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8">
-        <h1 className="text-2xl mb-4 font-bold text-center">Login</h1>
+        <h1 className="text-2xl mb-4 font-bold text-center">
+          Login as Employer
+        </h1>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
@@ -46,4 +48,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginEmployer;
