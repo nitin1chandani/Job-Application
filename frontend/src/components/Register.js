@@ -1,9 +1,33 @@
 import React from "react";
-
+import { useState } from "react";
 const Register = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const formHandler = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:4000/register", {
+      method: "POST",
+      body: JSON.stringify({ fullName, email, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      alert("User registered successfully");
+      setFullName("");
+      setEmail("");
+      setPassword("");
+    } else {
+      alert("User registration failed");
+    }
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8">
+      <form
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8"
+        onSubmit={formHandler}
+      >
         <h1 className="text-2xl mb-4 font-bold text-center">Register</h1>
         <div className="mb-4">
           <label
@@ -15,7 +39,10 @@ const Register = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="fullName"
+            required
             type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
             placeholder="Enter your full name"
           />
         </div>
@@ -30,6 +57,9 @@ const Register = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
           />
         </div>
@@ -44,13 +74,16 @@ const Register = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
           />
         </div>
         <div className="flex justify-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
           >
             Register
           </button>

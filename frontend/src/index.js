@@ -11,6 +11,7 @@ import ViewDetail from "./components/ViewDetail";
 import Banner from "./components/Banner";
 import LoginEmployer from "./components/LoginEmployer";
 import Post from "./components/Post";
+import Dashboard from "./components/dashboard";
 import Apply from "./components/Apply";
 const appRouter = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/apply",
         element: <Apply />,
+      },
+      {
+        path: "/recruit/dashboard",
+        element: <Dashboard />,
       },
     ],
   },
