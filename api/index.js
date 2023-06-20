@@ -20,7 +20,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    "mongodb+srv://root:root@cluster0.8egrqi9.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://root:root@cluster0.okg7drp.mongodb.net/?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
