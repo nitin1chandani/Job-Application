@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ViewDetail = () => {
   return (
@@ -12,9 +13,11 @@ const ViewDetail = () => {
         </div>
         <div className="flex justify-between mb-4">
           <p className="text-gray-500 text-sm">Start Date</p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
-            Apply Now
-          </button>
+          <Link to="/apply">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+              Apply Now
+            </button>
+          </Link>
         </div>
         <div className="mb-4">
           <h2 className="text-xl font-bold mb-2">About Company</h2>
